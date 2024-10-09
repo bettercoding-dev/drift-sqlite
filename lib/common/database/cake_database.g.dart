@@ -1,10 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'database.dart';
+part of 'cake_database.dart';
 
 // ignore_for_file: type=lint
-class $CakeTableTable extends CakeTable
-    with TableInfo<$CakeTableTable, CakeTableData> {
+class $CakeTableTable extends CakeTable with TableInfo<$CakeTableTable, Cake> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -37,7 +36,7 @@ class $CakeTableTable extends CakeTable
   String get actualTableName => $name;
   static const String $name = 'cake_table';
   @override
-  VerificationContext validateIntegrity(Insertable<CakeTableData> instance,
+  VerificationContext validateIntegrity(Insertable<Cake> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -62,9 +61,9 @@ class $CakeTableTable extends CakeTable
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  CakeTableData map(Map<String, dynamic> data, {String? tablePrefix}) {
+  Cake map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
-    return CakeTableData(
+    return Cake(
       id: attachedDatabase.typeMapping
           .read(DriftSqlType.int, data['${effectivePrefix}id'])!,
       name: attachedDatabase.typeMapping
@@ -80,84 +79,7 @@ class $CakeTableTable extends CakeTable
   }
 }
 
-class CakeTableData extends DataClass implements Insertable<CakeTableData> {
-  final int id;
-  final String name;
-  final int yummyness;
-  const CakeTableData(
-      {required this.id, required this.name, required this.yummyness});
-  @override
-  Map<String, Expression> toColumns(bool nullToAbsent) {
-    final map = <String, Expression>{};
-    map['id'] = Variable<int>(id);
-    map['name'] = Variable<String>(name);
-    map['yummyness'] = Variable<int>(yummyness);
-    return map;
-  }
-
-  CakeTableCompanion toCompanion(bool nullToAbsent) {
-    return CakeTableCompanion(
-      id: Value(id),
-      name: Value(name),
-      yummyness: Value(yummyness),
-    );
-  }
-
-  factory CakeTableData.fromJson(Map<String, dynamic> json,
-      {ValueSerializer? serializer}) {
-    serializer ??= driftRuntimeOptions.defaultSerializer;
-    return CakeTableData(
-      id: serializer.fromJson<int>(json['id']),
-      name: serializer.fromJson<String>(json['name']),
-      yummyness: serializer.fromJson<int>(json['yummyness']),
-    );
-  }
-  @override
-  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
-    serializer ??= driftRuntimeOptions.defaultSerializer;
-    return <String, dynamic>{
-      'id': serializer.toJson<int>(id),
-      'name': serializer.toJson<String>(name),
-      'yummyness': serializer.toJson<int>(yummyness),
-    };
-  }
-
-  CakeTableData copyWith({int? id, String? name, int? yummyness}) =>
-      CakeTableData(
-        id: id ?? this.id,
-        name: name ?? this.name,
-        yummyness: yummyness ?? this.yummyness,
-      );
-  CakeTableData copyWithCompanion(CakeTableCompanion data) {
-    return CakeTableData(
-      id: data.id.present ? data.id.value : this.id,
-      name: data.name.present ? data.name.value : this.name,
-      yummyness: data.yummyness.present ? data.yummyness.value : this.yummyness,
-    );
-  }
-
-  @override
-  String toString() {
-    return (StringBuffer('CakeTableData(')
-          ..write('id: $id, ')
-          ..write('name: $name, ')
-          ..write('yummyness: $yummyness')
-          ..write(')'))
-        .toString();
-  }
-
-  @override
-  int get hashCode => Object.hash(id, name, yummyness);
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      (other is CakeTableData &&
-          other.id == this.id &&
-          other.name == this.name &&
-          other.yummyness == this.yummyness);
-}
-
-class CakeTableCompanion extends UpdateCompanion<CakeTableData> {
+class CakeTableCompanion extends UpdateCompanion<Cake> {
   final Value<int> id;
   final Value<String> name;
   final Value<int> yummyness;
@@ -172,7 +94,7 @@ class CakeTableCompanion extends UpdateCompanion<CakeTableData> {
     required int yummyness,
   })  : name = Value(name),
         yummyness = Value(yummyness);
-  static Insertable<CakeTableData> custom({
+  static Insertable<Cake> custom({
     Expression<int>? id,
     Expression<String>? name,
     Expression<int>? yummyness,
@@ -219,9 +141,9 @@ class CakeTableCompanion extends UpdateCompanion<CakeTableData> {
   }
 }
 
-abstract class _$Database extends GeneratedDatabase {
-  _$Database(QueryExecutor e) : super(e);
-  $DatabaseManager get managers => $DatabaseManager(this);
+abstract class _$CakeDatabase extends GeneratedDatabase {
+  _$CakeDatabase(QueryExecutor e) : super(e);
+  $CakeDatabaseManager get managers => $CakeDatabaseManager(this);
   late final $CakeTableTable cakeTable = $CakeTableTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
@@ -242,7 +164,7 @@ typedef $$CakeTableTableUpdateCompanionBuilder = CakeTableCompanion Function({
 });
 
 class $$CakeTableTableFilterComposer
-    extends FilterComposer<_$Database, $CakeTableTable> {
+    extends FilterComposer<_$CakeDatabase, $CakeTableTable> {
   $$CakeTableTableFilterComposer(super.$state);
   ColumnFilters<int> get id => $state.composableBuilder(
       column: $state.table.id,
@@ -261,7 +183,7 @@ class $$CakeTableTableFilterComposer
 }
 
 class $$CakeTableTableOrderingComposer
-    extends OrderingComposer<_$Database, $CakeTableTable> {
+    extends OrderingComposer<_$CakeDatabase, $CakeTableTable> {
   $$CakeTableTableOrderingComposer(super.$state);
   ColumnOrderings<int> get id => $state.composableBuilder(
       column: $state.table.id,
@@ -280,17 +202,17 @@ class $$CakeTableTableOrderingComposer
 }
 
 class $$CakeTableTableTableManager extends RootTableManager<
-    _$Database,
+    _$CakeDatabase,
     $CakeTableTable,
-    CakeTableData,
+    Cake,
     $$CakeTableTableFilterComposer,
     $$CakeTableTableOrderingComposer,
     $$CakeTableTableCreateCompanionBuilder,
     $$CakeTableTableUpdateCompanionBuilder,
-    (CakeTableData, BaseReferences<_$Database, $CakeTableTable, CakeTableData>),
-    CakeTableData,
+    (Cake, BaseReferences<_$CakeDatabase, $CakeTableTable, Cake>),
+    Cake,
     PrefetchHooks Function()> {
-  $$CakeTableTableTableManager(_$Database db, $CakeTableTable table)
+  $$CakeTableTableTableManager(_$CakeDatabase db, $CakeTableTable table)
       : super(TableManagerState(
           db: db,
           table: table,
@@ -326,20 +248,20 @@ class $$CakeTableTableTableManager extends RootTableManager<
 }
 
 typedef $$CakeTableTableProcessedTableManager = ProcessedTableManager<
-    _$Database,
+    _$CakeDatabase,
     $CakeTableTable,
-    CakeTableData,
+    Cake,
     $$CakeTableTableFilterComposer,
     $$CakeTableTableOrderingComposer,
     $$CakeTableTableCreateCompanionBuilder,
     $$CakeTableTableUpdateCompanionBuilder,
-    (CakeTableData, BaseReferences<_$Database, $CakeTableTable, CakeTableData>),
-    CakeTableData,
+    (Cake, BaseReferences<_$CakeDatabase, $CakeTableTable, Cake>),
+    Cake,
     PrefetchHooks Function()>;
 
-class $DatabaseManager {
-  final _$Database _db;
-  $DatabaseManager(this._db);
+class $CakeDatabaseManager {
+  final _$CakeDatabase _db;
+  $CakeDatabaseManager(this._db);
   $$CakeTableTableTableManager get cakeTable =>
       $$CakeTableTableTableManager(_db, _db.cakeTable);
 }

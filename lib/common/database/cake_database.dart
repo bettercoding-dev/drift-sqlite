@@ -1,12 +1,13 @@
 import 'package:drift/drift.dart';
 import 'package:drift_flutter/drift_flutter.dart';
 import 'package:local_storage_sqlite_drift/cake/database/cake_table.dart';
+import 'package:local_storage_sqlite_drift/cake/model/cake.dart';
 
-part 'database.g.dart';
+part 'cake_database.g.dart';
 
 @DriftDatabase(tables: [CakeTable])
-class Database extends _$Database {
-  Database(): super(_openConnection());
+class CakeDatabase extends _$CakeDatabase {
+  CakeDatabase(): super(_openConnection());
 
   @override
   int get schemaVersion => 1;

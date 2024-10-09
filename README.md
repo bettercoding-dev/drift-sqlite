@@ -1,3 +1,4 @@
-# local_storage_sqlite_drift
+# Drift – Using an SQLite Database with Flutter
 
-A new Flutter project.
+This repository contains the source code for the tutorial on
+bettercoding.dev: https://bettercoding.dev/drift-sqlite-database-flutter/

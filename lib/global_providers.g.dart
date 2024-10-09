@@ -6,11 +6,11 @@ part of 'global_providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$databaseHash() => r'212f960bc751361c5a2a96e757463844b0a9ae1c';
+String _$databaseHash() => r'e18eeb5ef73375d546edfeb0fc66ec12c6365ff1';
 
 /// See also [database].
 @ProviderFor(database)
-final databaseProvider = AutoDisposeProvider<Database>.internal(
+final databaseProvider = AutoDisposeProvider<CakeDatabase>.internal(
   database,
   name: r'databaseProvider',
   debugGetCreateSourceHash:
@@ -19,6 +19,6 @@ final databaseProvider = AutoDisposeProvider<Database>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef DatabaseRef = AutoDisposeProviderRef<Database>;
+typedef DatabaseRef = AutoDisposeProviderRef<CakeDatabase>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

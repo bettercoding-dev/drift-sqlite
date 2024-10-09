@@ -1,5 +1,5 @@
 name: local_storage_sqlite_drift
-description: "A new Flutter project."
+description: "Local data storage with drift and SQLite"
 publish_to: 'none'
 version: 0.1.0
 
@@ -14,7 +14,6 @@ dependencies:
   flutter_riverpod: ^2.5.1
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-  path_provider: ^2.1.4
   riverpod_annotation: ^2.3.5
 
 dev_dependencies:
